@@ -10,13 +10,11 @@ const clockContainer = document.querySelector(".js-clock"),
          minutes < 10 ? `0${minutes}` : minutes
         }:${seconds < 10 ? `0${seconds}` : seconds }`;
 
-
  }
 function init(){
     getTime();
     setInterval(getTime,1000);
 }
 init();
+드디어 해냈다 시발 
 
-
-dddd
