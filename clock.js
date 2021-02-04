@@ -16,5 +16,5 @@ function init(){
     setInterval(getTime,1000);
 }
 init();
-드디어 해냈다 시발 
+
 
