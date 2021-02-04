@@ -4,6 +4,23 @@ const form = document.querySelector(".js-form"),
 
 const USER_LS = "currentUser",
   SHOWING_CN = "showing";
+  
+function saveName(text){
+  localStorage.setItem(USER_LS, text); //USER_LS은 key text는 Value
+}
+
+function handleSubmit(event){
+  event.preventDefault(); //enter을 눌러도 submit가 안됨 
+  const currentValue = input.value;
+  paintGreeting(currentValue);
+  saveName(currentValue);
+}
+
+function askForName(){
+  form.classList.add(SHOWING_CN);
+  form.addEventListener("submit", handleSubmit);
+}
+
 
 function paintGreeting(text) {
   form.classList.remove(SHOWING_CN);
@@ -14,7 +31,7 @@ function paintGreeting(text) {
 function loadName() {
   const currentUser = localStorage.getItem(USER_LS);
   if (currentUser === null) {
-    // she is not
+    askForName();
   } else {
     paintGreeting(currentUser);
   }
